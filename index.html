@@ -1,237 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bavanan - Portfolio</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #2d3436;
-            --accent-color: #0984e3;
-            --bg-color: #ffffff;
-            --text-color: #2d3436;
-            --light-gray: #f5f6fa;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bavanan - Portfolio</title>
+  <!-- FontAwesome for icons -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --primary-color: #2d3436;
+      --accent-color: #0984e3;
+      --bg-color: #ffffff;
+      --text-color: #2d3436;
+      --light-gray: #f5f6fa;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+    }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-        /* Header */
-        header {
-            padding: 120px 0 60px;
-            text-align: center;
-        }
+    /* Header */
+    header {
+      /* A subtle gradient to spice up the header */
+      background: linear-gradient(135deg, #2d3436, #0984e3);
+      color: #fff;
+      padding: 120px 0 60px;
+      text-align: center;
+    }
 
-        .header-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
+    .header-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
 
-        .header-content p {
-            font-size: 1.2rem;
-            color: var(--accent-color);
-        }
+    .header-content p {
+      font-size: 1.2rem;
+    }
 
-        /* Sections */
-        section {
-            padding: 80px 0;
-            border-bottom: 1px solid var(--light-gray);
-        }
+    /* Sections */
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--light-gray);
+    }
 
-        section:last-child {
-            border-bottom: none;
-        }
+    section:last-child {
+      border-bottom: none;
+    }
 
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            color: var(--primary-color);
-        }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      color: var(--primary-color);
+      text-align: center;
+      position: relative;
+    }
+    /* Simple underline effect for section headings */
+    h2::after {
+      content: "";
+      display: block;
+      margin: 0.5rem auto 0;
+      width: 60px;
+      height: 3px;
+      background-color: var(--accent-color);
+    }
 
-        /* Cards */
-        .card {
-            background-color: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
+    /* Cards */
+    .card {
+      background-color: #fff;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+    }
 
-        /* Skills */
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-        }
+    /* Skills */
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
 
-        .skill-tag {
-            background: var(--light-gray);
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
-        }
+    .skill-tag {
+      background: var(--light-gray);
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
-        /* Projects */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
+    .skill-tag:hover {
+      background-color: var(--accent-color);
+      color: #fff;
+    }
 
-        .project-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
+    /* Projects */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
 
-        .project-content {
-            padding: 1.5rem;
-        }
+    .project-card {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        .project-content h3 {
-            margin-bottom: 0.5rem;
-            color: var(--accent-color);
-        }
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+    }
 
-        /* Social Links */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
+    .project-content {
+      padding: 1.5rem;
+    }
 
-        .social-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.1rem;
-            padding: 0.8rem 1.5rem;
-            border-radius: 4px;
-            background: var(--light-gray);
-            transition: transform 0.2s;
-        }
+    .project-content h3 {
+      margin-bottom: 0.5rem;
+      color: var(--accent-color);
+    }
 
-        .social-link:hover {
-            transform: translateY(-2px);
-        }
+    /* Social Links */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header {
-                padding: 80px 0 40px;
-            }
+    .social-link {
+      color: var(--primary-color);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      background: var(--light-gray);
+      transition: transform 0.2s;
+    }
 
-            .header-content h1 {
-                font-size: 2rem;
-            }
+    .social-link:hover {
+      transform: translateY(-2px);
+    }
 
-            section {
-                padding: 60px 0;
-            }
-        }
-    </style>
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        padding: 80px 0 40px;
+      }
+
+      .header-content h1 {
+        font-size: 2rem;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container header-content">
-            <h1>Bavanan</h1>
-            <p>Software Developer</p>
+  <header>
+    <div class="container header-content">
+      <h1>Bavanan</h1>
+      <p>Software Developer</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>About</h2>
+      <div class="card">
+        <p>
+          I am a software engineering student at Drexel University passionate about building
+          innovative and impactful solutions. My expertise includes Python, React, SQL, and
+          Agile methodologies, with hands-on experience in full-stack development and data
+          analysis.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="card">
+        <div class="skill-tags">
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Git</span>
         </div>
-    </header>
+      </div>
+    </section>
 
-    <main class="container">
-        <section>
-            <h2>About</h2>
-            <div class="card">
-                <p>I am a software engineering student at Drexel University passionate about building innovative and impactful solutions. My expertise includes Python, React, SQL, and Agile methodologies, with hands-on experience in full-stack development and data analysis.</p>
-            </div>
-        </section>
+    <section>
+      <h2>Experience</h2>
+      <div class="card">
+        <h3>Software Engineer Fellow</h3>
+        <p>Headstarter.co • Jul 2024 - Sept 2024</p>
+        <p>
+          Developed web and SaaS products using React, Next.js, and Node.js, optimizing
+          real-time performance and scaling platforms to 1,000+ users.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Consumer Insights Data Analyst</h3>
+        <p>Beats by Dre (Extern) • Jun 2024 - Aug 2024</p>
+        <p>
+          Performed sentiment analysis on Amazon reviews, delivering data visualizations that
+          influenced marketing strategies and product features.
+        </p>
+      </div>
+    </section>
 
-        <section>
-            <h2>Skills</h2>
-            <div class="card">
-                <div class="skill-tags">
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">React</span>
-                    <span class="skill-tag">Node.js</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">Git</span>
-                </div>
-            </div>
-        </section>
+    <section>
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <div class="project-content">
+            <h3>NBA Player Performance Prediction App</h3>
+            <p>
+              Built a data-driven app predicting player performance with real-time stats,
+              featuring engaging visualizations like shot charts and spider charts.
+            </p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-content">
+            <h3>GitHub Projects</h3>
+            <p>
+              Explore my GitHub for more projects showcasing skills in React, Python, C, and
+              machine learning.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section>
-            <h2>Experience</h2>
-            <div class="card">
-                <h3>Software Engineer Fellow</h3>
-                <p>Headstarter.co • Jul 2024 - Sept 2024</p>
-                <p>Developed web and SaaS products using React, Next.js, and Node.js, optimizing real-time performance and scaling platforms to 1,000+ users.</p>
-            </div>
-            <div class="card">
-                <h3>Consumer Insights Data Analyst</h3>
-                <p>Beats by Dre (Extern) • Jun 2024 - Aug 2024</p>
-                <p>Performed sentiment analysis on Amazon reviews, delivering data visualizations that influenced marketing strategies and product features.</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>NBA Player Performance Prediction App</h3>
-                        <p>Built a data-driven app predicting player performance with real-time stats, featuring engaging visualizations like shot charts and spider charts.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>GitHub Projects</h3>
-                        <p>Explore my GitHub for more projects showcasing skills in React, Python, C, and machine learning.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Connect</h2>
-            <div class="social-links">
-                <a href="http://www.linkedin.com/in/bavananb" class="social-link">
-                    <i class="fab fa-linkedin"></i>
-                    LinkedIn
-                </a>
-                <a href="https://github.com/bobbramillan?tab=repositories" class="social-link">
-                    <i class="fab fa-github"></i>
-                    GitHub
-                </a>
-            </div>
-        </section>
-    </main>
+    <section>
+      <h2>Connect</h2>
+      <div class="social-links">
+        <a
+          href="http://www.linkedin.com/in/bavananb"
+          class="social-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fab fa-linkedin"></i>
+          LinkedIn
+        </a>
+        <a
+          href="https://github.com/bobbramillan?tab=repositories"
+          class="social-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fab fa-github"></i>
+          GitHub
+        </a>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
