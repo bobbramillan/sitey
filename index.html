@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name - Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #2d3436;
@@ -13,17 +12,23 @@
             --bg-color: #ffffff;
             --text-color: #2d3436;
             --light-gray: #f5f6fa;
-            --dark-bg: #121212;
-            --dark-text: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--bg-color);
-            margin: 0;
-            transition: background-color 0.3s, color 0.3s;
         }
 
         .container {
@@ -32,48 +37,49 @@
             padding: 0 20px;
         }
 
+        /* Header */
         header {
+            padding: 120px 0 60px;
             text-align: center;
-            padding: 120px 20px;
-            background: linear-gradient(135deg, var(--accent-color), #74b9ff);
-            color: white;
         }
 
         .header-content h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
+            color: var(--primary-color);
         }
 
         .header-content p {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
+            color: var(--accent-color);
         }
 
+        /* Sections */
         section {
             padding: 80px 0;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 0.8s forwards ease-out;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        section:last-child {
+            border-bottom: none;
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 2rem;
             color: var(--primary-color);
         }
 
+        /* Cards */
         .card {
-            background-color: var(--light-gray);
+            background-color: white;
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-
+        /* Skills */
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
@@ -82,18 +88,12 @@
 
         .skill-tag {
             background: var(--light-gray);
-            border: 2px solid var(--accent-color);
             padding: 0.5rem 1rem;
-            border-radius: 20px;
+            border-radius: 4px;
             font-size: 0.9rem;
-            transition: background 0.3s;
         }
 
-        .skill-tag:hover {
-            background: var(--accent-color);
-            color: white;
-        }
-
+        /* Projects */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -102,15 +102,9 @@
 
         .project-card {
             background: white;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .project-content {
@@ -122,6 +116,7 @@
             color: var(--accent-color);
         }
 
+        /* Social Links */
         .social-links {
             display: flex;
             justify-content: center;
@@ -130,64 +125,39 @@
         }
 
         .social-link {
-            background: var(--accent-color);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
+            color: var(--primary-color);
             text-decoration: none;
-            font-size: 1.1rem;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             gap: 0.5rem;
-            transition: background 0.3s, transform 0.3s;
+            font-size: 1.1rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            background: var(--light-gray);
+            transition: transform 0.2s;
         }
 
         .social-link:hover {
-            background: #74b9ff;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
-        .dark-mode {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: var(--accent-color);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .dark-mode:hover {
-            background: #74b9ff;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
+        /* Responsive Design */
         @media (max-width: 768px) {
             header {
-                padding: 80px 20px;
+                padding: 80px 0 40px;
             }
 
             .header-content h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
 
             section {
-                padding: 60px 20px;
+                padding: 60px 0;
             }
         }
     </style>
 </head>
 <body>
-    <button class="dark-mode" onclick="toggleDarkMode()">Dark Mode</button>
-
     <header>
         <div class="container header-content">
             <h1>Your Name</h1>
@@ -196,16 +166,72 @@
     </header>
 
     <main class="container">
-        <!-- Sections here (About, Skills, Experience, etc.) -->
-    </main>
+        <section>
+            <h2>About</h2>
+            <div class="card">
+                <p>A passionate software developer focused on creating clean, efficient solutions. I specialize in full-stack development and enjoy tackling complex problems.</p>
+            </div>
+        </section>
 
-    <script>
-        function toggleDarkMode() {
-            const root = document.documentElement;
-            const isDark = root.style.getPropertyValue('--bg-color') === 'var(--dark-bg)';
-            root.style.setProperty('--bg-color', isDark ? 'var(--light-gray)' : 'var(--dark-bg)');
-            root.style.setProperty('--text-color', isDark ? 'var(--primary-color)' : 'var(--dark-text)');
-        }
-    </script>
+        <section>
+            <h2>Skills</h2>
+            <div class="card">
+                <div class="skill-tags">
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Git</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Experience</h2>
+            <div class="card">
+                <h3>Senior Developer</h3>
+                <p>Company Name • 2020 - Present</p>
+                <p>Led development of key features and mentored junior developers.</p>
+            </div>
+            <div class="card">
+                <h3>Software Engineer</h3>
+                <p>Previous Company • 2018 - 2020</p>
+                <p>Developed and maintained full-stack applications.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Project Name</h3>
+                        <p>Brief description of the project and technologies used.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Project Name</h3>
+                        <p>Brief description of the project and technologies used.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Connect</h2>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/yourusername" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/yourusername" class="social-link">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
