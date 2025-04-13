@@ -4,7 +4,7 @@ This is my personal developer portfolio built with **Next.js 13**, **TypeScript*
 
 ## 🚀 Live Site
 
-👉 [https://bobbramillan.github.io/sitey](https://bobbramillan.github.io/sitey)  
+👉 [https://sitey-lovat.vercel.app/](https://sitey-lovat.vercel.app/)  
 _(Replace this with your deployed URL if different)_
 
 ---
