@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 // ✅ Dynamically set metadata using siteConfig
 export const metadata = {
   // 👇 Required in Next 15+ to fix the “metadataBase not set” warning
-  metadataBase: new URL("http://localhost:3000"),
+  metadataBase: new URL("bobbramillan.github.io/sitey/"),
 
   title: `${siteConfig.name} | ${siteConfig.title}`,
   description: siteConfig.description,
@@ -21,7 +21,7 @@ export const metadata = {
   openGraph: {
     title: `${siteConfig.name} | ${siteConfig.title}`,
     description: siteConfig.description,
-    url: "http://localhost:3000",
+    url: "bobbramillan.github.io/sitey/",
     siteName: `${siteConfig.name} Portfolio`,
     images: [
       {
