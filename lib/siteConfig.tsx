@@ -46,17 +46,17 @@ export const siteConfig = {
       title: "Started at Drexel University",
       location: "Philadelphia, PA",
       description:
-        "Pursuing a B.S. in Electrical and Computer Engineering. Relevant coursework includes Data Structures, Algorithms, Systems Programming, and Database Management.",
+        "Pursuing a B.S. in Computer Science. Relevant coursework includes Data Structures, Systems Programming, Differential Equations, Discrete Mathematics, and Database Management.",
       icon: <LuGraduationCap />,
       date: "2022 - 2027 (Expected)",
     },
     {
-      title: "Software Engineer Fellow",
-      location: "Headstarter.co, Long Island City, NY",
+      title: "Software Engineer Intern",
+      location: "SRI International, Princeton, NJ",
       description:
-        "Worked on SaaS products using React, Next.js, and Node.js. Integrated Google Cloud, Stripe, and ElevenLabs APIs.",
+        "Built full-stack manufacturing platform with PostgreSQL backend and TypeScript/React/NextJS frontend, enabling device traceability, real-time metrics, and secure PLM integration via mutual TLS. Developed PyQt5 automation tool that reduced LiDAR sensor reporting from 1 week to 2 hours by batch-processing data and auto-generating PowerPoint/Excel reports. Deployed system internally via Nginx, then migrated to AWS EC2 for improved scalability and cross-team access.",
       icon: <CgWorkAlt />,
-      date: "July 2024 – Sept 2024",
+      date: "April 2025 – Sept 2025",
     },
     {
       title: "Data Analyst Extern for Beats by Dre",
@@ -93,7 +93,6 @@ export const siteConfig = {
 
   // 🧠 Skills
   skills: [
-    "Kotlin",
     "Swift",
     "JavaScript",
     "TypeScript",
@@ -101,8 +100,9 @@ export const siteConfig = {
     "Next.js",
     "Python",
     "Tailwind",
-    "C++",
+    "C/C++",
     "Django",
-    "PostgreSQL",
+    "SQL(Postgres, Oracle)",
+    "Java"
   ],
 };
