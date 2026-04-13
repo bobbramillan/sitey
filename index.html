@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bav bramillan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ============================================================
+       COLORS — change these to retheme the whole site
+       ============================================================ */
+    :root {
+      --bg: #fdf8f3;           /* page background */
+      --text: #3a3128;         /* main text */
+      --muted: #a0948a;        /* secondary / dimmed text */
+      --accent: #2c221a;       /* headings / bold text */
+      --soft: #e8ddd4;         /* subtle underline color */
+      --border: #ede5da;       /* dividers and pill borders */
+      --hover: #b85c2a;        /* link hover color */
+      --tag-bg: #f2ece4;       /* pill background */
+    }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: 540px;
+      margin: 0 auto;
+      padding: 80px 24px 96px;
+      animation: rise 0.5s ease both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ============================================================
+       NAME + TAGLINE + LINKS
+       ============================================================ */
+    .name {
+      font-family: 'Lora', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .tagline {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .header-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 20px;
+      margin-bottom: 52px;
+    }
+
+    .header-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .header-link:hover {
+      color: var(--hover);
+    }
+
+    .header-link svg {
+      width: 13px;
+      height: 13px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    .link-divider {
+      color: var(--border);
+      font-size: 12px;
+    }
+
+    /* ============================================================
+       SECTIONS
+       ============================================================ */
+    section {
+      margin-bottom: 44px;
+    }
+
+    .label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .entries {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .entry-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 4px 8px;
+    }
+
+    .entry-title {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--accent);
+    }
+
+    a.entry-title {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--soft);
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    a.entry-title:hover {
+      color: var(--hover);
+      border-bottom-color: var(--hover);
+    }
+
+    .entry-org {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .entry-desc {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+      line-height: 1.65;
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .pill {
+      font-size: 11px;
+      font-family: 'IBM Plex Mono', monospace;
+      background: var(--tag-bg);
+      color: var(--text);
+      padding: 3px 10px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .pill:hover {
+      background: var(--soft);
+      color: var(--accent);
+    }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    footer {
+      margin-top: 60px;
+      font-size: 11px;
+      color: var(--border);
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    footer a:hover {
+      color: var(--hover);
+    }
+
+    @media (max-width: 480px) {
+      main { padding: 52px 20px 72px; }
+      .name { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+
+    <!-- ============================================================
+         NAME + TAGLINE
+         ============================================================ -->
+    <p class="name">bav bramillan</p>
+    <p class="tagline">ios & swift. drexel cs '27. i like building things that feel good to use.</p>
+
+    <!-- ============================================================
+         LINKS — update href values as needed
+         ============================================================ -->
+    <div class="header-links">
+
+      <!-- Email -->
+      <a class="header-link" href="mailto:bob.bramillan@gmail.com">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        bbramillan@gmail.com
+      </a>
+      <span class="link-divider">·</span>
+
+      <!-- LinkedIn -->
+      <a class="header-link" href="https://www.linkedin.com/in/bavananb" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        linkedin
+      </a>
+      <span class="link-divider">·</span>
+
+      <!-- GitHub -->
+      <a class="header-link" href="https://github.com/bobbramillan" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        github
+      </a>
+      <span class="link-divider">·</span>
+
+      <!-- Resume — update this path after deploying -->
+      <a class="header-link" href="/Bavanan_Resume.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/></svg>
+        resume
+      </a>
+
+    </div>
+
+
+    <!-- ============================================================
+         EXPERIENCE
+         To add a role: copy one full <div class="entry">...</div>
+         and paste it inside <div class="entries">
+         To remove a role: delete the <div class="entry">...</div>
+         ============================================================ -->
+    <section>
+      <div class="label">experience</div>
+      <div class="entries">
+
+        <!-- Experience entry 1 -->
+        <div class="entry">
+          <div class="entry-top">
+            <span class="entry-title">software engineer intern</span>
+            <span class="entry-org">· sri international</span>
+          </div>
+          <div class="entry-desc">full-stack manufacturing platform · typescript, react, nextjs, postgres · cut lidar reporting from 1 week → 2 hrs</div>
+        </div>
+
+        <!-- Experience entry 2 -->
+        <div class="entry">
+          <div class="entry-top">
+            <span class="entry-title">data analyst extern</span>
+            <span class="entry-org">· beats by dre</span>
+          </div>
+          <div class="entry-desc">sentiment analysis on 1k+ reviews · python, nlp, plotly</div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         BUILDS / PROJECTS
+         To add a project WITH a link: use <a class="entry-title" href="YOUR_URL">title ↗</a>
+         To add a project WITHOUT a link: use <span class="entry-title">title</span>
+         ============================================================ -->
+    <section>
+      <div class="label">builds</div>
+      <div class="entries">
+
+        <!-- Project with link -->
+        <div class="entry">
+          <div class="entry-top">
+            <a class="entry-title" href="https://nba-study-103.streamlit.app/" target="_blank" rel="noopener">nba performance forecaster ↗</a>
+          </div>
+          <div class="entry-desc">random forest model · real-time stats · streamlit, scikit-learn, plotly</div>
+        </div>
+
+        <!-- Project without link (add href when repo is ready) -->
+        <div class="entry">
+          <div class="entry-top">
+            <span class="entry-title">drexel shell</span>
+          </div>
+          <div class="entry-desc">unix-style shell in c · command execution, piping, background processes</div>
+        </div>
+
+        <!-- Project without link (add href when repo is ready) -->
+        <div class="entry">
+          <div class="entry-top">
+            <span class="entry-title">face counter</span>
+          </div>
+          <div class="entry-desc">real-time face detection · python, opencv</div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         STACK
+         Add or remove <span class="pill"> tags as needed
+         ============================================================ -->
+    <section>
+      <div class="label">stack</div>
+      <div class="pills">
+        <span class="pill">swift</span>
+        <span class="pill">c/c++</span>
+        <span class="pill">typescript</span>
+        <span class="pill">python</span>
+        <span class="pill">react</span>
+        <span class="pill">next.js</span>
+        <span class="pill">java</span>
+        <span class="pill">sql</span>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         FOOTER — update repo link if it ever changes
+         ============================================================ -->
+    <footer>
+      <a href="https://github.com/bobbramillan/sitey" target="_blank" rel="noopener">SOURCE REPOSITORY</a>
+    </footer>
+
+  </main>
+</body>
+</html>
